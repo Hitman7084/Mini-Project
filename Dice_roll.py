@@ -1,7 +1,7 @@
 from tkinter import *
 import random
 
-window = Tk() 
+window = Tk()
  
 window.configure(bg="black") 
 
