@@ -5,7 +5,7 @@ window = Tk()
  
 window.configure(bg="black") 
 
-window.geometry("1366x768") 
+window.geometry("500x500") 
 
 window.title("Rolling The Dice") 
 
