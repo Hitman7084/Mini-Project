@@ -28,14 +28,15 @@ def disableButton():
     button9.configure(state=DISABLED)
 
 
+#Button Clicks
 
 def btnClick(buttons):
     global bclick, flag, player2_name, player1_name, playerb, pa
     if buttons["text"] == " " and bclick == True:
         buttons["text"] = "X"
         bclick = False
-        playerb = p2.get() + " Wins!"
-        pa = p1.get() + " Wins!"
+        playerb = p2.get() + " Won!"
+        pa = p1.get() + " Won!"
         checkForWin()
         flag += 1
 
@@ -46,7 +47,9 @@ def btnClick(buttons):
         checkForWin()
         flag += 1
     else:
-        tkinter.messagebox.showinfo("Tic-Tac-Toe", "Button already Clicked!")
+        tkinter.messagebox.showinfo("Tic-Tac-Toe", "Button Clicked!")
+
+#All Conditions for a win nhi to Draw
 
 def checkForWin():
     if (button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X' or
@@ -62,7 +65,7 @@ def checkForWin():
         tkinter.messagebox.showinfo("Tic-Tac-Toe", pa)
 
     elif(flag == 8):
-        tkinter.messagebox.showinfo("Tic-Tac-Toe", "It is a Tie")
+        tkinter.messagebox.showinfo("Tic-Tac-Toe", "Draw")
 
     elif (button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == 'O' or
           button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == 'O' or
@@ -78,6 +81,8 @@ def checkForWin():
 
 
 buttons = StringVar()
+
+#CUSTOMIZATION - sb thik hai Font might need change though
 
 label = Label( tk, text="Player 1:", font='Times 20 bold', bg='gray', fg='black', height=1, width=8)
 label.grid(row=1, column=0)
