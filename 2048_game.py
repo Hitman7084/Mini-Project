@@ -1,10 +1,8 @@
-# ==== Importing all necessary libraries
 from tkinter import *
 import random
-# ==== creating main class
+
 class Play_2048(Tk):
 
-    # ==== adding necessary class variables
     game_board = []
     new_random_tiles = [2, 2, 2, 2, 2, 2, 4]
     score = 0
@@ -12,16 +10,15 @@ class Play_2048(Tk):
     game_score = 0
     highest_score = 0
 
-    # ==== creating user window
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
-        # ==== create user interface
+
         self.game_score = StringVar(self)
         self.game_score.set("0")
         self.highest_score = StringVar(self)
         self.highest_score.set("0")
 
-        # ==== adding new game , score and highest score option
+
         self.button_frame = Frame(self)
         self.button_frame.grid(row=2, column=0, columnspan=4)
         Button(self.button_frame, text="New Game", font=("times new roman", 15), command=self.new_game).grid(row=0, column=0)
@@ -35,16 +32,16 @@ class Play_2048(Tk):
         self.canvas = Canvas(self, width=410, height=410, borderwidth=5, highlightthickness=0)
         self.canvas.pack(side="top", fill="both", expand="false")
 
-        # ==== create new game
+
         self.new_game()
 
-    # ==== add new tiles
+
     def new_tiles(self):
         index = random.randint(0, 6)
         x = -1
         y = -1
 
-        # ==== check while game is not over
+
         while self.full() == False:
             x = random.randint(0, 3)
             y = random.randint(0, 3)
@@ -67,7 +64,7 @@ class Play_2048(Tk):
 
                 break
 
-    # ==== check board is full or not
+
     def full(self):
         for i in range(0, 4):
             for j in range(0, 4):
@@ -75,7 +72,7 @@ class Play_2048(Tk):
                     return False
         return True
 
-    # ==== showing game board
+
     def show_board(self):
         cellwidth = 105
         cellheight = 105
@@ -93,18 +90,18 @@ class Play_2048(Tk):
                 else:
                     self.show_number(row, column, x1, y1, x2, y2, num)
 
-    # ==== show board block when it is empty
+
     def show_number0(self, row, column, a, b, c, d):
         self.square[row, column] = self.canvas.create_rectangle(a, b, c, d, fill="#f5f5f5", tags="rect", outline="")
 
-    # ==== show board number
+
     def show_number(self, row, column, a, b, c, d, num):
         bg_color = {'2': '#eee4da', '4': '#ede0c8', '8': '#edc850', '16': '#edc53f', '32': '#f67c5f', '64': '#f65e3b', '128': '#edcf72', '256': '#edcc61', '512': '#f2b179', '1024': '#f59563', '2048': '#edc22e',}
         color = {'2': '#776e65', '4': '#f9f6f2', '8': '#f9f6f2', '16': '#f9f6f2', '32': '#f9f6f2', '64': '#f9f6f2', '128': '#f9f6f2', '256': '#f9f6f2', '512': '#776e65', '1024': '#f9f6f2', '2048': '#f9f6f2', }
         self.square[row, column] = self.canvas.create_rectangle(a, b, c, d, fill=bg_color[str(num)], tags="rect", outline="")
         self.canvas.create_text((a + c) / 2, (b + d) / 2, font=("Arial", 36), fill=color[str(num)], text=str(num))
 
-    # ==== moves by user
+
     def moves(self, event):
 
         if event.keysym == 'Down':
@@ -217,7 +214,7 @@ class Play_2048(Tk):
             self.high_score = self.score
             self.highest_score.set(str(self.high_score))
 
-    # ==== to create new game
+    #to create new game
     def new_game(self):
         self.score = 0
         self.game_score.set("0")
@@ -242,7 +239,7 @@ class Play_2048(Tk):
                 break
         self.show_board()
 
-    # ==== check for game over
+
     def game_over(self):
         for i in range(0, 4):
             for j in range(0, 4):
@@ -277,7 +274,7 @@ class Play_2048(Tk):
                                         text=gameover[row][column])
         return True
 
-    # ==== check for game won
+    #game won
     def game_won(self):
         gameover = [["Y", "O", "U", "", ], ["", "", "", ""], ["W", "O", "N", "!"], ["", "", "", ""]]
         cellwidth = 105
@@ -295,7 +292,6 @@ class Play_2048(Tk):
                                         text=gameover[row][column])
 
 if __name__ == "__main__":
-    # ==== preparing main window
     app = Play_2048()
     app.bind_all('<Key>', app.moves)
     app.wm_title("2048 by PythonGeeks")
