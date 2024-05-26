@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.messagebox
 tk = Tk()
-tk.title("Made by Himanshu Pal and Arpit")
+tk.title("Made by Himanshu Pal and Atul Upadhyay")
 
 #Brute force se hi kr diya
 

@@ -5,7 +5,7 @@ import random
 class NumberGuessingGame:
     def __init__(self, root):
         self.root = root
-        self.root.title("Number Guessing Game")
+        self.root.title("Number Guessing Game- Made by Atul Updadhyay")
         self.root.geometry("400x300")
         self.root.configure(bg="#282c34")
         
