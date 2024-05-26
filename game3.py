@@ -28,7 +28,7 @@ class Snake(Tk):
         if i<=0 or j<=0 or ii>=500 or jj>=500:
             self.x=0
             self.y=0
-            #gameover
+            #gameover(error aa rha tha)
             self.base.create_text(220,220,text="GAME OVER",font=('arial',40,'bold'),fill='red')
             self.gameStatus=0
         return
@@ -49,7 +49,7 @@ class Snake(Tk):
             a=random.randint(20,480)
             b=random.randint(20,480)
             self.target=self.base.create_oval(a,b,a+20,b+20,fill='red',tag='food')
-            #print(self.base.coords(self.target))
+            #print(self.base.coords(self.target)) <---- coordinates hai ye
         if self.target:
             #print(self.base.coords(self.target))
             i,j,ii,jj=self.base.coords(self.target)
@@ -97,7 +97,7 @@ class Snake(Tk):
         
         return
 
-snakeobj=Snake(className="ProjectGurukul Snake Game")
+snakeobj=Snake(className="Made by Himanshu Pal")
 while True:
     snakeobj.update()
     snakeobj.update_idletasks()

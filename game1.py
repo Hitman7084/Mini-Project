@@ -214,7 +214,7 @@ class Play_2048(Tk):
             self.high_score = self.score
             self.highest_score.set(str(self.high_score))
 
-    #to create new game
+    #to create new game self wala use hua
     def new_game(self):
         self.score = 0
         self.game_score.set("0")
@@ -274,7 +274,7 @@ class Play_2048(Tk):
                                         text=gameover[row][column])
         return True
 
-    #game won
+    #winning condition
     def game_won(self):
         gameover = [["Y", "O", "U", "", ], ["", "", "", ""], ["W", "O", "N", "!"], ["", "", "", ""]]
         cellwidth = 105
@@ -294,6 +294,6 @@ class Play_2048(Tk):
 if __name__ == "__main__":
     app = Play_2048()
     app.bind_all('<Key>', app.moves)
-    app.wm_title("2048 by PythonGeeks")
+    app.wm_title("2048 Made by Himanshu Mall")
     app.minsize(430, 470)
     app.mainloop()
