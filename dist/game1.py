@@ -9,6 +9,7 @@ class Play_2048(Tk):
     high_score = 0
     game_score = 0
     highest_score = 0
+    #non keyword args use hua aur keyword wala bhi
 
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
