@@ -27,8 +27,8 @@ def roll_dices():
 
 window = Tk()
 window.configure(bg="black")
-window.geometry("400x400")
-window.title("Rolling Dice made by Himanshu mall and Arpit")
+window.geometry("600x600")
+window.title("Rolling Dice made by Himanshu mall")
 window.resizable(0, 0)
 
 roll_button = Button(window, text="Roll!", width=10, height=2, font=15, bg="aqua", bd=2, command=roll_dices)
